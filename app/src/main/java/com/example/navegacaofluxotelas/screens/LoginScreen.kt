@@ -1,5 +1,7 @@
 package com.example.navegacaofluxotelas.screens
 
+import android.annotation.SuppressLint
+import android.util.Log
 import android.widget.Button
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -16,9 +18,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
 
+@SuppressLint("RestrictedApi")
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -32,7 +38,9 @@ fun LoginScreen() {
             fontWeight = FontWeight.Bold
         )
         Button(
-          onClick = {/* TODO */},
+          onClick = {
+              navController.navigate("menu")
+          },
             colors = ButtonDefaults.buttonColors(
                 Color.White
             ),
